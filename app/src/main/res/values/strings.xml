@@ -10,4 +10,8 @@
     <string name="invalid_name">Nome inválido</string>
     <string name="invalid_rating">Nota inválida</string>
     <string name="invalid_frequency">Frequência inválida</string>
+    <string name="you_are">Você está</string>
+    <string name="status_approved">Aprovado!</string>
+    <string name="your_average_rating_was">Sua média final foi de %.2f</string>
+    <string name="your_frequency_was">E você esteve presente em %d%% das aulas</string>
 </resources>
