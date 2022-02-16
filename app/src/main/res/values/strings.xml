@@ -7,4 +7,7 @@
     <string name="second_rating">Segunda nota</string>
     <string name="frequency">Frequência</string>
     <string name="proceed">Prosseguir</string>
+    <string name="invalid_name">Nome inválido</string>
+    <string name="invalid_rating">Nota inválida</string>
+    <string name="invalid_frequency">Frequência inválida</string>
 </resources>
