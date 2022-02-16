@@ -1,5 +1,6 @@
 package com.luizmatias.multiactivityapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,23 +34,38 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
-        float firstRating = Float.parseFloat(editTextFirstRating.getText().toString());
+        try {
+            float firstRating = Float.parseFloat(editTextFirstRating.getText().toString());
 
-        if (!(firstRating >= 0 && firstRating <= 10)) {
+            if (!(firstRating >= 0 && firstRating <= 10)) {
+                editTextFirstRating.setError(getString(R.string.invalid_rating));
+                return false;
+            }
+        } catch (Exception e) {
             editTextFirstRating.setError(getString(R.string.invalid_rating));
             return false;
         }
 
-        float secondRating = Float.parseFloat(editTextSecondRating.getText().toString());
+        try {
+            float secondRating = Float.parseFloat(editTextSecondRating.getText().toString());
 
-        if (!(secondRating >= 0 && secondRating <= 10)) {
+            if (!(secondRating >= 0 && secondRating <= 10)) {
+                editTextSecondRating.setError(getString(R.string.invalid_rating));
+                return false;
+            }
+        } catch (Exception e) {
             editTextSecondRating.setError(getString(R.string.invalid_rating));
             return false;
         }
 
-        int frequency = Integer.parseInt(editTextFrequency.getText().toString());
+        try {
+            int frequency = Integer.parseInt(editTextFrequency.getText().toString());
 
-        if (!(frequency >= 0 && frequency <= 100)) {
+            if (!(frequency >= 0 && frequency <= 100)) {
+                editTextFrequency.setError(getString(R.string.invalid_frequency));
+                return false;
+            }
+        } catch (Exception e) {
             editTextFrequency.setError(getString(R.string.invalid_frequency));
             return false;
         }
@@ -58,7 +74,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void navigateToResults() {
-        //TODO redirect to result actitivy
+        Bundle params = new Bundle();
+
+        String name = editTextName.getText().toString();
+        float firstRating = Float.parseFloat(editTextFirstRating.getText().toString());
+        float secondRating = Float.parseFloat(editTextSecondRating.getText().toString());
+        int frequency = Integer.parseInt(editTextFrequency.getText().toString());
+
+        params.putString("name", name);
+        params.putFloat("first_rating", firstRating);
+        params.putFloat("second_rating", secondRating);
+        params.putInt("frequency", frequency);
+
+        startActivity(new Intent(this, ResultActivity.class).putExtras(params));
     }
 
     private void bind() {
