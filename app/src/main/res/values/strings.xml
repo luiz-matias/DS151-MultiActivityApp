@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MultiActivityApp</string>
+    <string name="insert_your_name">Olá!</string>
+    <string name="instructions">Insira seu nome, suas duas notas (de 0 a 10) e sua frequência (de 0 a 100) para obter seu status.</string>
+    <string name="first_rating">Primeira nota</string>
+    <string name="name">Seu nome</string>
+    <string name="second_rating">Segunda nota</string>
+    <string name="frequency">Frequência</string>
+    <string name="proceed">Prosseguir</string>
 </resources>
